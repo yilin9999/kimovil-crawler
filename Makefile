@@ -20,5 +20,9 @@ venv:
 activate-venv:
 	sh -c ' . ./venv/bin/activate'
 
+update_url_run:
+	rm kimovil_url.txt
+	make run
+	
 run:
 	sh -c ' . ./venv/bin/activate ; python3 kimovil_crawler.py'	

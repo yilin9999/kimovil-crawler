@@ -11,17 +11,13 @@ import logging
 logging.StreamHandler(sys.stdout)
 logging.basicConfig(level=logging.INFO)
 
-deviceUrlList  = []
-deviceInfoList = []
-max_page       = 230
-
 class KimovilCrawler():
     def __init__(self):
         self.kimovil_url = "https://www.kimovil.com/en/compare-smartphones/"
 
         self.deviceUrlList  = []
         self.deviceInfoList = []
-        self.max_page       = 230
+        self.max_page       = 300
 
     ## Generate the kimovil_url.txt for the first run
     def gen_kimovil_url_list(self, url_file):
@@ -45,7 +41,7 @@ class KimovilCrawler():
             logging.error(str(e))
         
         with open(url_file,'w') as fptr:
-            for itr in deviceUrlList:        
+            for itr in self.deviceUrlList:        
                 fptr.writelines(itr+'\n')
 
     ## Generate the kimovil_url.txt for the first run
@@ -59,7 +55,7 @@ class KimovilCrawler():
         
         ## iterate the url items
         page = 0
-        for url in deviceUrlList:
+        for url in self.deviceUrlList:
             
             time.sleep(2)
             logging.info("page {0}, access {1}".format(page, url))    

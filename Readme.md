@@ -11,3 +11,7 @@ Start crawler go go go
 ```
 make run
 ```
+If you want to update the default url list, please execute
+```
+make update_url_run
+```
