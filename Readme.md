@@ -1,6 +1,11 @@
 # Kimovil crawler
 This is Kimovil crawler for getting cellphone hardware spec
-
+## Requirment
+***
+```
+sudo apt install python3-pip
+pip3 install virtualenv
+```
 ## Enviroment
 ***
 Generate development environment
