@@ -71,7 +71,7 @@ class KimovilCrawler():
         for itr in deviceUrlList:      
             
             url = itr.strip()
-            time.sleep(1)
+            #time.sleep(1)
             logging.info("page {0}, access {1}".format(page, url))    
         
             res = requests.get(url)
@@ -92,8 +92,8 @@ class KimovilCrawler():
             
             if page % 500 == 0:
                 df = pd.DataFrame(data=deviceInfoList, 
-                    columns={'Model','CPU'}
-                    #columns=list(featureDict.keys())
+                    #columns={'Model','CPU'}
+                    columns=list(featureDict.keys())
                     )
                 df.to_csv("deviceInfo_tmp.csv", sep=',' , encoding='utf-8')
                 
